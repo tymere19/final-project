@@ -16,7 +16,7 @@
             <Font size="44.0" />
          </font>
       </Label>
-      <Button fx:id="buttonprocessor" layoutX="230.0" layoutY="344.0" mnemonicParsing="false" text="Click to begin">
+      <Button fx:id="buttonprocessor" layoutX="230.0" layoutY="344.0" mnemonicParsing="false" onAction="#getzipcodedata" text="Click to begin">
          <font>
             <Font size="16.0" />
          </font>
