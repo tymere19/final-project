@@ -39,6 +39,9 @@ public class ZipCodeAppController {
 
     @FXML
     private Label title;
+    
+    @FXML
+    private Label zipPrompt;
 
     @FXML
     private TextField zipcodeinsert;
