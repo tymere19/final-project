@@ -22,7 +22,7 @@
          </font>
       </Button>
       <Circle fx:id="resultcircle" fill="DODGERBLUE" layoutX="145.0" layoutY="176.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
-      <TextField fx:id="zipcodeinsert" layoutX="183.0" layoutY="288.0" text="   please insert zipcode">
+      <TextField fx:id="zipcodeinsert" layoutX="183.0" layoutY="288.0">
          <font>
             <Font size="19.0" />
          </font>
@@ -50,5 +50,10 @@
          <font>
             <Font name="Rockwell" size="24.0" />
          </font></Label>
+      <Label fx:id="zipPrompt" layoutX="205.0" layoutY="260.0" text="Enter zip code below">
+         <font>
+            <Font name="Chalkboard" size="15.0" />
+         </font>
+      </Label>
    </children>
 </Pane>
