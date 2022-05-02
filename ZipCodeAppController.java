@@ -16,25 +16,26 @@ import java.net.URISyntaxException;
 import java.io.IOException;
 import com.google.gson.Gson;
 import javafx.application.Platform;
-//private HttpClient client;
-//private String Cityinfo ci;
-//private String updatecity; 
-//private String updatestate;
-//private String updatestate_fullname;
-//private double updatelatitude;
-//private double updatelongitude;
+
 
 
 public class ZipCodeAppController {
 
     @FXML
     private Button buttonprocessor;
-
+    
+    @FXML
+    private Label cityName;
+   
     @FXML
     private Pane finishedproject;
 
     @FXML
     private Circle resultcircle;
+    
+    @FXML
+    private Label stateName;
+
 
     @FXML
     private Label title;
@@ -45,6 +46,8 @@ public class ZipCodeAppController {
  
     
     private HttpClient client;
+    
+    
  
  public static final String TEMP_ZIPKEY = "zipcode_key";
   
@@ -56,9 +59,32 @@ public class ZipCodeAppController {
     updateZipCodeData();
    }  
       
+   CityInfo ci = new CityInfo();
+   
    protected void updateUI() {
    
-
+   
+   cityName.setText(this.ci.data.city);
+   stateName.setText(this.ci.data.state);
+   
+   // ****************************
+   // You need to call set text on a label
+   // You will need to put a label, or several, over the circle in your GUI
+   // Give the labels clear names like cityNameLabel, stateNameLabel, etc
+   // 
+   // 
+   // Since processZipCodeData(String) sets an instance variable, assuming the name ci, 
+   //   you would do the following to access the data in your project (see processZipCodeData(String) below.
+   // I'm using a print statement here but you would pass this to setText() of the label
+   //   component you want to update. The process is the same for each label.
+   // You can see how I do this in the sample temperature app when I update the min, max, and current temperatures.
+   //
+   
+   //System.out.println( this.ci.data.state );
+   
+   // Note you can chain the call to access the data and since these items are all public
+   //   you can access the variables directly by name, no need for a getter.
+   //
    }
    
 
@@ -66,8 +92,13 @@ public class ZipCodeAppController {
       
       
       System.out.print(data);
-      Gson gson = new Gson();      
-      CityInfo ci = gson.fromJson(data, CityInfo.class);    
+      Gson gson = new Gson();
+      //CityInfo ci = new CityInfo();
+      // ****************
+      // Create an instance variable above to store the CityInfo object      
+      // As written the ci variable is only visible in this method because it is declared here
+      //      
+      ci = gson.fromJson(data, CityInfo.class);    
       Platform.runLater( new Runnable() {
                            public void run() {
                               updateUI();
@@ -108,4 +139,3 @@ public class ZipCodeAppController {
  }
    
    
-
