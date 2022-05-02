@@ -42,5 +42,13 @@
             <Image url="@wizard-level-up.png" />
          </image>
       </ImageView>
+      <Label fx:id="cityName" layoutX="81.0" layoutY="127.0" text="City" textAlignment="CENTER">
+         <font>
+            <Font name="Rockwell" size="24.0" />
+         </font></Label>
+      <Label fx:id="stateName" layoutX="81.0" layoutY="183.0" text="State" textAlignment="CENTER">
+         <font>
+            <Font name="Rockwell" size="24.0" />
+         </font></Label>
    </children>
 </Pane>
